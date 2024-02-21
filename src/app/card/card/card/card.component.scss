@@ -1,0 +1,15 @@
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100px; /* задаємо висоту контейнера, якщо потрібно */
+}
+
+#text1 {
+  align-self: flex-start;
+}
+
+#text2 {
+  align-self: flex-end;
+}

@@ -1,0 +1,16 @@
+<div class="card mb-2 bg-info " >
+  <div class="card-img-overlay" >
+    <div class="card-text " >
+        {{ gif.title }}
+    </div>
+    
+        <div class="card-text text-light" >
+        {{ gif.import_datetime | date:'mediumDate'}}
+        </div>
+  </div>
+
+  <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top">
+</div>
+
+
+

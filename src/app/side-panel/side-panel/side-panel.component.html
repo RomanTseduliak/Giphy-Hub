@@ -1,0 +1,9 @@
+<div class="border-right p-3 sidebar" >
+  <h3 class="text-light">Giphy Hub</h3>
+  <hr class="text-light">
+  <div class="list-group list-reset" *ngFor="let tag of tags">
+      <button class="list-group-item list-group-item-action" (click)="searchTag(tag)">
+          {{ tag }}
+      </button>
+  </div>
+</div>
