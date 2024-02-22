@@ -13,9 +13,7 @@ export class SearchFieldComponent {
 
   searchTag() {
     const newTag = this.tagInput.nativeElement.value;
-
     this.gifsService.searchTag(newTag);
-    
     this.tagInput.nativeElement.value = ''; 
   }
 }

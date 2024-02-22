@@ -2,7 +2,14 @@
   <div class="col-12">
          <app-search-field></app-search-field>
   </div>
+
   <div class="col-12 pt-2">
+    <app-spinner *ngIf="isLoading | async"></app-spinner>
       <app-card-list [gifs]="gifs"></app-card-list>
   </div>
 </div>
+  <div *ngIf="gifsNotFound | async" class="row p-3 bg-secondary">
+    <div class="col-12">
+      <h1 class="text-light">No gifs found</h1>
+    </div>
+  </div>

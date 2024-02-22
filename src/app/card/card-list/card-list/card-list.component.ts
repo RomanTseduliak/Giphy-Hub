@@ -7,7 +7,7 @@ import { Gif } from 'src/app/interfaces/gifs.interfaces';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent {
-  constructor() {}
+  constructor() { }
 
   @Input() public gifs: Gif[] = [];
 }

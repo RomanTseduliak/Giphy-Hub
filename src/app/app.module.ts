@@ -9,6 +9,7 @@ import { CardListComponent } from './card/card-list/card-list/card-list.componen
 import { CardComponent } from './card/card/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomePageComponent,
     CardListComponent,
     CardComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

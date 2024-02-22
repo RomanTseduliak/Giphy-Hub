@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GifsService } from './services/gifs.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Giphy Hub';
+  gifsNotFound = this.gifsService.gifsNotFound;
+
+  constructor(private gifsService: GifsService) { }
+
+  ngOnInit() {
+    if (!this.gifsNotFound) {
+      this.gifsService
+        .getData()
+    }
+  }
 }

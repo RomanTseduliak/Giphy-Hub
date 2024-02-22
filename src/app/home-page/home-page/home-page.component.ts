@@ -8,7 +8,11 @@ import { GifsService } from 'src/app/services/gifs.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  constructor( private gifsService: GifsService ) {}
+  gifsNotFound = this.gifsService.gifsNotFound;
+  isLoading = this.gifsService.isLoading;
+
+  constructor(private gifsService: GifsService) {
+  }
 
   get gifs(): Gif[] {
     return this.gifsService.gifList;
