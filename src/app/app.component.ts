@@ -8,12 +8,12 @@ import { GifsService } from './services/gifs.service';
 })
 export class AppComponent {
   title = 'Giphy Hub';
-  gifsNotFound = this.gifsService.gifsNotFound;
+  isDefaultList = this.gifsService.isDefaultList;
 
   constructor(private gifsService: GifsService) { }
 
   ngOnInit() {
-    if (!this.gifsNotFound) {
+    if (this.isDefaultList) {
       this.gifsService
         .getData()
     }

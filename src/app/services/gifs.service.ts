@@ -12,6 +12,7 @@ export class GifsService {
     public gifList: Gif[] = [];
     gifsNotFound = new BehaviorSubject(false)
     isLoading = new BehaviorSubject(false)
+    isDefaultList = new BehaviorSubject(true)
 
     constructor(private http: HttpClient) {
         this.loadLocalStorage();
@@ -58,6 +59,8 @@ export class GifsService {
                     if (resp.data.length === 0) {
                         this.gifsNotFound.next(true)
                         this.isLoading.next(false)
+                        this.gifList = []
+                        this.isDefaultList.next(false);
                     } else {
                         this.gifList = resp.data;
                         this.gifsNotFound.next(false)
@@ -76,8 +79,12 @@ export class GifsService {
 
         this.http.get<DefaultResponse>(`${this.serviceUrl}/trending`, { params })
             .subscribe(resp => {
-                this.gifList = resp.data;
+                this.isLoading.next(true)
+                setTimeout(() => {
+                    this.gifList = resp.data;
+                }, 3000);
             })
+
     }
 
 
